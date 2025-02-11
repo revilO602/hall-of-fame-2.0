@@ -1,5 +1,5 @@
-import BGImage from "/src/assets/welcome_bg_v2.png";
-import Logo from "/src/assets/logo.svg";
+import BGImage from "/src/assets/welcome_bg.png";
+import Logo from "/src/assets/logo.png";
 
 function Welcome() {
   return (
