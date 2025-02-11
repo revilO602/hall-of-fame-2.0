@@ -1,18 +1,20 @@
-import BGImage from "/src/assets/welcomeTBD.png";
+import BGImage from "/src/assets/welcome-bg.jpg";
+import Logo from "/src/assets/logo.svg";
 
 function Welcome() {
   return (
     <>
       <div
-        className="flex h-screen w-screen justify-center items-center"
+        className="relative flex h-screen w-screen justify-center items-center"
         style={{
           backgroundImage: `url(${BGImage})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        <a href="#home" className="size-full">
-          {" "}
+        <div className="absolute inset-0 bg-white opacity-70"></div>
+        <a href="#home" className="relative z-10">
+          <img src={Logo} alt="Logo" className="h-160 w-160" />
         </a>
       </div>
     </>
