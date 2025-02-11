@@ -1,5 +1,5 @@
 import { ReactPhotoSphereViewer } from "react-photo-sphere-viewer";
-import DressingRoomImg from "/src/assets/dressRoom.png";
+import DressingRoomImg from "/src/assets/dressRoomV3.png";
 
 function DressingRoom() {
   return (
