@@ -1,5 +1,5 @@
 import videoBg from "/src/assets/homeVideo.mp4";
-import { Carousel, Indicators } from "react-responsive-3d-carousel";
+import { Carousel } from "react-responsive-3d-carousel";
 import "react-responsive-3d-carousel/dist/styles.css";
 import SectionCard from "../components/SectionCard";
 const items = [

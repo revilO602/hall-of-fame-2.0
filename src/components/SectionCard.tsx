@@ -1,9 +1,9 @@
 interface SectionCardProps {
-  backgroundImage: string;
+  //   backgroundImage: string;
   title: string;
 }
 
-function SectionCard({ backgroundImage, title }: SectionCardProps) {
+function SectionCard({ title }: SectionCardProps) {
   return (
     <a
       href="#dressing-room"
