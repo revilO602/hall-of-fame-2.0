@@ -3,16 +3,13 @@ import { Carousel } from "react-responsive-3d-carousel";
 import "react-responsive-3d-carousel/dist/styles.css";
 import SectionCard from "../components/SectionCard";
 const items = [
-  <SectionCard backgroundImage="/path/to/image.jpg" title="Sieň Slávy" />,
-  <SectionCard
-    backgroundImage="/path/to/image.jpg"
-    title="Majstrovstvá 2002"
-  />,
-  <SectionCard backgroundImage="/path/to/image.jpg" title="Šatňa" />,
-  <SectionCard backgroundImage="/path/to/image.jpg" title="Funkcionári" />,
-  <SectionCard backgroundImage="/path/to/image.jpg" title="Šatňa trénerov" />,
-  <SectionCard backgroundImage="/path/to/image.jpg" title="Press Centrum" />,
-  <SectionCard backgroundImage="/path/to/image.jpg" title="TBD" />,
+  <SectionCard title="Sieň Slávy" />,
+  <SectionCard title="Majstrovstvá 2002" />,
+  <SectionCard title="Šatňa" />,
+  <SectionCard title="Funkcionári" />,
+  <SectionCard title="Šatňa trénerov" />,
+  <SectionCard title="Press Centrum" />,
+  <SectionCard title="TBD" />,
 ];
 
 function Home() {
