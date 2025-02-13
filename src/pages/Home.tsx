@@ -2,14 +2,21 @@ import videoBg from "/src/assets/homeVideo.mp4";
 import { Carousel } from "react-responsive-3d-carousel";
 import "react-responsive-3d-carousel/dist/styles.css";
 import SectionCard from "../components/SectionCard";
+import coachesImg from "/src/assets/MainMenu/coaches.png";
+import dressRoomImg from "/src/assets/MainMenu/dressRoom.png";
+import msImg from "/src/assets/MainMenu/ms2002.png";
+import pressImg from "/src/assets/MainMenu/press.png";
+import staffImg from "/src/assets/MainMenu/staff.png";
+import tbdImg from "/src/assets/MainMenu/tbd.png";
+
 const items = [
-  <SectionCard title="Sieň Slávy" />,
-  <SectionCard title="Majstrovstvá 2002" />,
-  <SectionCard title="Šatňa" />,
-  <SectionCard title="Funkcionári" />,
-  <SectionCard title="Šatňa trénerov" />,
-  <SectionCard title="Press Centrum" />,
-  <SectionCard title="TBD" />,
+  <SectionCard backgroundImage={tbdImg} />,
+  <SectionCard backgroundImage={msImg} />,
+  <SectionCard backgroundImage={dressRoomImg} />,
+  <SectionCard backgroundImage={staffImg} />,
+  <SectionCard backgroundImage={coachesImg} />,
+  <SectionCard backgroundImage={pressImg} />,
+  <SectionCard backgroundImage={tbdImg} />,
 ];
 
 function Home() {
@@ -34,6 +41,7 @@ function Home() {
           startIndex={0}
           width="300px"
           height="400px"
+          boxShadow="0"
           indicators={{ translate: ["0px", "-50px"] }}
         />
       </div>
