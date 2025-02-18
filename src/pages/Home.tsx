@@ -43,6 +43,7 @@ function Home() {
           height="400px"
           boxShadow="0"
           indicators={{ translate: ["0px", "-50px"] }}
+          arrows={{ width: "5rem", height: "8rem" }}
         />
       </div>
     </>
