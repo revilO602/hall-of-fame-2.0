@@ -1,6 +1,6 @@
 // import { useState } from "react";
 import { ReactPhotoSphereViewer } from "react-photo-sphere-viewer";
-import DressingRoomImg from "/src/assets/dressRoomV5.png";
+import DressingRoomImg from "/src/assets/dressRoomV6.png";
 
 function DressingRoom() {
   // const [currentImage, setCurrentImage] = useState(DressingRoomImgV4);
