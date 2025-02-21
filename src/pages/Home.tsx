@@ -4,8 +4,8 @@ import "react-responsive-3d-carousel/dist/styles.css";
 import SectionCard from "../components/SectionCard";
 import coachesImg from "/src/assets/MainMenu/coaches.png";
 import dressRoomImg from "/src/assets/MainMenu/dressRoom.png";
-import msImg from "/src/assets/MainMenu/ms2002.png";
-import pressImg from "/src/assets/MainMenu/press.png";
+import msImg from "/src/assets/MainMenu/ms2002test.png";
+import pressImg from "/src/assets/MainMenu/presstest.png";
 import staffImg from "/src/assets/MainMenu/staff.png";
 import tbdImg from "/src/assets/MainMenu/tbd.png";
 
