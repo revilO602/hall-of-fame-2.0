@@ -45,7 +45,7 @@ function DressingRoom() {
           minFov={38}
           maxFov={110}
           defaultZoomLvl={0}
-          plugins={plugins}
+          plugins={plugins as never}
         ></ReactPhotoSphereViewer>
         {/* <button
           onClick={toggleImage}
