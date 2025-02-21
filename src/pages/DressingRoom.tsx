@@ -1,41 +1,43 @@
-// import { useEffect } from "react";
 import { ReactPhotoSphereViewer } from "react-photo-sphere-viewer";
 import DressingRoomImg from "/src/assets/dressRoomV7.png";
-// import { Viewer } from "@photo-sphere-viewer/core";
-// import "@photo-sphere-viewer/core/index.css";
+import { MarkersPlugin } from "@photo-sphere-viewer/markers-plugin";
+import "@photo-sphere-viewer/markers-plugin/index.css";
 function DressingRoom() {
-  // const [currentImage, setCurrentImage] = useState(DressingRoomImgV4);
-
-  // const toggleImage = () => {
-  //   setCurrentImage((prevImage) =>
-  //     prevImage === DressingRoomImgV4 ? DressingRoomImgV3 : DressingRoomImgV4
-  //   );
-  // };
-
-  // useEffect(() => {
-  //   const viewer = new Viewer({
-  //     container: "viewer",
-  //     panorama: DressingRoomImg,
-  //     // minFov: 62,
-  //     // maxFov: 140,
-  //     // fisheye: true,
-  //     // zoomSpeed: 0.5,
-  //     // moveInertia: true,
-  //     // defaultZoomLvl: 0,
-  //   });
-
-  //   return () => {
-  //     viewer.destroy();
-  //   };
-  // }, []);
+  const plugins = [
+    [
+      MarkersPlugin,
+      {
+        markers: [
+          {
+            // html marker with custom style
+            id: "text",
+            position: { yaw: -0.1, pitch: 0 },
+            elementLayer: "HTML <b>marker</b> &hearts;",
+            anchor: "center",
+            scale: [1, 3],
+            style: {
+              maxWidth: "100px",
+              color: "white",
+              fontSize: "20px",
+              fontFamily: "Helvetica, sans-serif",
+              textAlign: "center",
+              //test
+              backgroundColor: "red",
+              opacity: 0.7,
+            },
+            tooltip: {
+              content: "An HTML marker",
+              position: "right",
+            },
+          },
+        ],
+      },
+    ],
+  ];
 
   return (
     <>
       <div className="flex h-screen w-screen justify-center items-center">
-        {/* <div
-          id="viewer"
-          className="flex h-screen w-screen justify-center items-center"
-        ></div> */}
         <ReactPhotoSphereViewer
           src={DressingRoomImg}
           height={"100vh"}
@@ -43,6 +45,7 @@ function DressingRoom() {
           minFov={38}
           maxFov={110}
           defaultZoomLvl={0}
+          plugins={plugins}
         ></ReactPhotoSphereViewer>
         {/* <button
           onClick={toggleImage}
