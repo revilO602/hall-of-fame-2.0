@@ -1,4 +1,4 @@
-import BGVideo from "/src/assets/Welcome/pozadie1.mp4#t=0,60";
+import BGVideo from "/src/assets/Welcome/pozadie1.mp4";
 import Logo from "/src/assets/Welcome/logo_solo.png";
 import Title from "/src/assets/Welcome/text.png";
 
