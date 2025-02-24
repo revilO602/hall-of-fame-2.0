@@ -1,32 +1,53 @@
+// @ts-nocheck
+import { useState } from "react";
 import { ReactPhotoSphereViewer } from "react-photo-sphere-viewer";
 import DressingRoomImg from "/src/assets/dressRoomV7.png";
+import PalfyVid from "/src/assets/DressRoom/AnimovanyPalfyV3.mp4";
 import { MarkersPlugin } from "@photo-sphere-viewer/markers-plugin";
 import "@photo-sphere-viewer/markers-plugin/index.css";
+import PlayerCards from "../components/Player/PlayerCards";
+
 function DressingRoom() {
+  const [showPlayerCards, setShowPlayerCards] = useState(false);
+  // const togglePlayerCards = () => {
+  //   setShowPlayerCards((prev) => !prev);
+  // };
+
+  const hidePlayerCards = (event) => {
+    if (showPlayerCards && !event.target.closest("#player-cards")) {
+      setShowPlayerCards(false);
+    }
+  };
+
+  const handleReady = (instance) => {
+    const markersPlugs = instance.getPlugin(MarkersPlugin);
+    if (!markersPlugs) return;
+    markersPlugs.addEventListener("select-marker", () => {
+      setShowPlayerCards(true);
+    });
+  };
+
+  const anchor = document.createElement("button");
+  anchor.type = "button";
+  anchor.style.display = "block";
+  anchor.style.backgroundColor = "red";
+  anchor.style.opacity = "0.7";
+  anchor.style.width = "12rem";
+  anchor.style.height = "18rem";
+
   const plugins = [
     [
       MarkersPlugin,
       {
         markers: [
           {
-            // html marker with custom style
             id: "text",
-            position: { yaw: -0.1, pitch: 0 },
-            elementLayer: "HTML <b>marker</b> &hearts;",
+            position: { yaw: -0.1, pitch: 0.025 },
+            elementLayer: anchor,
             anchor: "center",
             scale: [1, 3],
-            style: {
-              maxWidth: "100px",
-              color: "white",
-              fontSize: "20px",
-              fontFamily: "Helvetica, sans-serif",
-              textAlign: "center",
-              //test
-              backgroundColor: "red",
-              opacity: 0.7,
-            },
             tooltip: {
-              content: "An HTML marker",
+              content: "test",
               position: "right",
             },
           },
@@ -37,7 +58,10 @@ function DressingRoom() {
 
   return (
     <>
-      <div className="flex h-screen w-screen justify-center items-center">
+      <div
+        className="flex h-screen w-screen justify-center items-center"
+        onClick={hidePlayerCards}
+      >
         <ReactPhotoSphereViewer
           src={DressingRoomImg}
           height={"100vh"}
@@ -45,14 +69,14 @@ function DressingRoom() {
           minFov={38}
           maxFov={110}
           defaultZoomLvl={0}
-          plugins={plugins as never}
+          plugins={plugins}
+          onReady={handleReady}
         ></ReactPhotoSphereViewer>
-        {/* <button
-          onClick={toggleImage}
-          className="absolute top-4 right-4 bg-blue-500 text-black p-2 rounded"
-        >
-          Toggle Lightning
-        </button> */}
+        {showPlayerCards && (
+          <div id="player-cards">
+            <PlayerCards video={PalfyVid} />
+          </div>
+        )}
       </div>
     </>
   );

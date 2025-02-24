@@ -8,12 +8,12 @@ function Welcome() {
       <div className="relative flex flex-col h-screen w-screen justify-center items-center">
         <video
           autoPlay
-          // loop
+          loop
           muted
           className="absolute inset-0 w-full h-full object-cover"
           onTimeUpdate={(e) => {
             if (e.currentTarget.currentTime >= e.currentTarget.duration - 0.4) {
-              e.currentTarget.pause();
+              e.currentTarget.currentTime = 0;
             }
           }}
         >

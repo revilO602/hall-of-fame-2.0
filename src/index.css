@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad:wght@700&family=Alumni+Sans:ital,wght@1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Afacad&family=Alumni+Sans:ital,wght@1,600&display=swap');
 @import "tailwindcss";
-
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -67,4 +68,32 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+/* Custom scrollbar styles for Firefox */
+.scrollbar-custom {
+  scrollbar-width: auto; /* "auto" or "thin" */
+  scrollbar-color: #01226D #AAB3D4; /* thumb color and track color */
+}
+
+.card-text {
+  font-family: "Afacad", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5vw;
+}
+
+.text-red {
+  color: #CE0526; /* Text color */
+  font-weight: 700;
+}
+
+.card-title {
+  font-family: "Afacad", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 2.5vw;
+  text-transform: uppercase;
 }
