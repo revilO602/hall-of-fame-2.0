@@ -20,6 +20,7 @@ function DressingRoom() {
   };
 
   const handleReady = (instance) => {
+    instance.navbar.hide();
     const markersPlugs = instance.getPlugin(MarkersPlugin);
     if (!markersPlugs) return;
     markersPlugs.addEventListener("select-marker", () => {
@@ -59,13 +60,13 @@ function DressingRoom() {
   return (
     <>
       <div
-        className="flex h-screen w-screen justify-center items-center"
+        className="flex h-dvh w-dvw justify-center items-center"
         onClick={hidePlayerCards}
       >
         <ReactPhotoSphereViewer
           src={DressingRoomImg}
-          height={"100vh"}
-          width={"100%"}
+          height={"100dvh"}
+          width={"100dvw"}
           minFov={38}
           maxFov={110}
           defaultZoomLvl={0}

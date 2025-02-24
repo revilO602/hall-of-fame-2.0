@@ -8,7 +8,7 @@ interface PlayerCardsProps {
 
 function PlayerCards({ video }: PlayerCardsProps) {
   return (
-    <div className="flex gap-x-10 absolute left-[15%] top-[6%] w-[70%] z-[999]">
+    <div className="flex gap-x-10 absolute left-[15dvw] top-[6dvh] w-[70dvw] z-[999]">
       <VisualCard video={video} />
       {/* <StatCard /> */}
       <BioCard />
