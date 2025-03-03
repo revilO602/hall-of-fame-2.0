@@ -3,7 +3,7 @@ import CardBg from "/src/assets/DressRoom/card_bg.png";
 function BioCard() {
   return (
     <div
-      className="relative w-full h-full"
+      className="relative w-full h-full rotate-4"
       style={{
         backgroundImage: `url(${CardBg})`,
         backgroundSize: "cover",

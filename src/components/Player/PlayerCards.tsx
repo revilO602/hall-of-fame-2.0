@@ -3,14 +3,14 @@ import BioCard from "./BioCard";
 import VisualCard from "./VisualCard";
 
 interface PlayerCardsProps {
-  video: string;
+  src: string;
+  isVideo?: boolean;
 }
 
-function PlayerCards({ video }: PlayerCardsProps) {
+function PlayerCards({ src, isVideo = true }: PlayerCardsProps) {
   return (
-    <div className="flex gap-x-10 absolute left-[15dvw] top-[6dvh] w-[70dvw] z-[999]">
-      <VisualCard video={video} />
-      {/* <StatCard /> */}
+    <div className="flex gap-x-10 absolute left-[15dvw] top-[7dvh] w-[70dvw] z-[999]">
+      <VisualCard src={src} isVideo={isVideo} />
       <BioCard />
     </div>
   );
