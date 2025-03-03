@@ -43,7 +43,7 @@ function DressingRoom() {
   palfy.type = "button";
   palfy.style.display = "block";
   palfy.style.backgroundColor = "red";
-  palfy.style.opacity = "0.7";
+  palfy.style.opacity = "0.5";
   palfy.style.width = "12rem";
   palfy.style.height = "18rem";
 
@@ -51,7 +51,7 @@ function DressingRoom() {
   test.type = "button";
   test.style.display = "block";
   test.style.backgroundColor = "red";
-  test.style.opacity = "0.7";
+  test.style.opacity = "0.5";
   test.style.width = "12rem";
   test.style.height = "18rem";
 
