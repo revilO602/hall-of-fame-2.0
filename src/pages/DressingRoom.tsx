@@ -79,7 +79,7 @@ function DressingRoom() {
             <PlayerCards video={PalfyVid} />
           </div>
         )}
-        <div className="absolute top-0 left-0 m-4 p-2 bg-white bg-opacity-70 rounded z-50">
+        <div className="absolute top-0 left-0 m-4 p-2 bg-white text-black text-lg font-bold bg-opacity-70 rounded z-50">
           FOV: {FOV.toFixed(2)}
         </div>
       </div>
