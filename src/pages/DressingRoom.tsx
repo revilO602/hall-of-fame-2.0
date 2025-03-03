@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ReactPhotoSphereViewer } from "react-photo-sphere-viewer";
 import DressingRoomImg from "/src/assets/dressRoomV7.png";
 import PalfyVid from "/src/assets/DressRoom/AnimovanyPalfyV3.mp4";
@@ -9,9 +9,7 @@ import PlayerCards from "../components/Player/PlayerCards";
 
 function DressingRoom() {
   const [showPlayerCards, setShowPlayerCards] = useState(false);
-  // const togglePlayerCards = () => {
-  //   setShowPlayerCards((prev) => !prev);
-  // };
+  const [FOV, setFOV] = useState(84);
 
   const hidePlayerCards = (event) => {
     if (showPlayerCards && !event.target.closest("#player-cards")) {
@@ -21,6 +19,9 @@ function DressingRoom() {
 
   const handleReady = (instance) => {
     instance.navbar.hide();
+    instance.addEventListener("zoom-updated", () => {
+      setFOV(instance.state.vFov);
+    });
     const markersPlugs = instance.getPlugin(MarkersPlugin);
     if (!markersPlugs) return;
     markersPlugs.addEventListener("select-marker", () => {
@@ -67,9 +68,9 @@ function DressingRoom() {
           src={DressingRoomImg}
           height={"100dvh"}
           width={"100dvw"}
-          minFov={38}
-          maxFov={110}
-          defaultZoomLvl={0}
+          minFov={30}
+          maxFov={120}
+          defaultZoomLvl={40}
           plugins={plugins}
           onReady={handleReady}
         ></ReactPhotoSphereViewer>
@@ -78,6 +79,9 @@ function DressingRoom() {
             <PlayerCards video={PalfyVid} />
           </div>
         )}
+        <div className="absolute top-0 left-0 m-4 p-2 bg-white bg-opacity-70 rounded z-50">
+          FOV: {FOV.toFixed(2)}
+        </div>
       </div>
     </>
   );
